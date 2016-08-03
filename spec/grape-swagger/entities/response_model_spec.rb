@@ -50,9 +50,9 @@ describe 'responseModel' do
       'type' => 'object',
       'description' => 'This returns something or an error',
       'properties' =>
-          { 'text' => { 'type' => 'string', 'description' => 'Content of something.' },
+          { 'text' => { 'type' => 'string', 'description' => 'Content of something.', 'required' => true },
             'colors' => { 'type' => 'array', 'items' => { 'type' => 'string' }, 'description' => 'Colors' },
-            'kind' => { '$ref' => '#/definitions/Kind', 'description' => 'The kind of this something.' },
+            'kind' => { '$ref' => '#/definitions/Kind', 'description' => 'The kind of this something.', 'required' => true },
             'kind2' => { '$ref' => '#/definitions/Kind', 'description' => 'Secondary kind.' },
             'kind3' => { '$ref' => '#/definitions/Kind', 'description' => 'Tertiary kind.' },
             'tags' => { 'type' => 'array', 'items' => { '$ref' => '#/definitions/Tag' }, 'description' => 'Tags.' },

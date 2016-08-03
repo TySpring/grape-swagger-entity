@@ -78,6 +78,10 @@ module GrapeSwagger
           if entity_options[:documentation] && entity_options[:documentation][:desc]
             memo[entity_name][:description] = entity_options[:documentation][:desc]
           end
+
+          if entity_options[:documentation] && entity_options[:documentation][:required]
+            memo[entity_name][:required] = entity_options[:documentation][:required]
+          end
         end
       end
 

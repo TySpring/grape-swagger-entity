@@ -16,5 +16,15 @@ describe GrapeSwagger::Entity::Parser do
         expect(parsed_entity[:kind3]['$ref']).to eq('#/definitions/Kind')
       end
     end
+
+    context "when 'required' is passed into the documentation hash" do
+      let(:endpoint) { nil }
+
+      it "includes the 'required' field for those attributes" do
+        expect(parsed_entity[:text][:required]).to eq(true)
+        expect(parsed_entity[:kind][:required]).to eq(true)
+        expect(parsed_entity[:colors][:required]).to be_nil
+      end
+    end
   end
 end

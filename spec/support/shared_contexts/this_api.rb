@@ -18,9 +18,9 @@ shared_context 'this api' do
         end
 
         class Something < Grape::Entity
-          expose :text, documentation: { type: 'string', desc: 'Content of something.' }
+          expose :text, documentation: { type: 'string', desc: 'Content of something.', required: true }
           expose :colors, documentation: { type: 'string', desc: 'Colors', is_array: true }
-          expose :kind, using: Kind, documentation: { type: 'ThisApi::Kind', desc: 'The kind of this something.' }
+          expose :kind, using: Kind, documentation: { type: 'ThisApi::Kind', desc: 'The kind of this something.', required: true }
           expose :kind2, using: Kind, documentation: { desc: 'Secondary kind.' }
           expose :kind3, using: ThisApi::Entities::Kind, documentation: { desc: 'Tertiary kind.' }
           expose :tags, using: ThisApi::Entities::Tag, documentation: { desc: 'Tags.', is_array: true }
